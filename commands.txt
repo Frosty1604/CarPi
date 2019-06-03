@@ -1,0 +1,283 @@
+b'0100': Supported PIDs [01-20]
+b'0101': Status since DTCs cleared
+b'0102': DTC that triggered the freeze frame
+b'0103': Fuel System Status
+b'0104': Calculated Engine Load
+b'0105': Engine Coolant Temperature
+b'0106': Short Term Fuel Trim - Bank 1
+b'0107': Long Term Fuel Trim - Bank 1
+b'0108': Short Term Fuel Trim - Bank 2
+b'0109': Long Term Fuel Trim - Bank 2
+b'010A': Fuel Pressure
+b'010B': Intake Manifold Pressure
+b'010C': Engine RPM
+b'010D': Vehicle Speed
+b'010E': Timing Advance
+b'010F': Intake Air Temp
+b'0110': Air Flow Rate (MAF)
+b'0111': Throttle Position
+b'0112': Secondary Air Status
+b'0113': O2 Sensors Present
+b'0114': O2: Bank 1 - Sensor 1 Voltage
+b'0115': O2: Bank 1 - Sensor 2 Voltage
+b'0116': O2: Bank 1 - Sensor 3 Voltage
+b'0117': O2: Bank 1 - Sensor 4 Voltage
+b'0118': O2: Bank 2 - Sensor 1 Voltage
+b'0119': O2: Bank 2 - Sensor 2 Voltage
+b'011A': O2: Bank 2 - Sensor 3 Voltage
+b'011B': O2: Bank 2 - Sensor 4 Voltage
+b'011C': OBD Standards Compliance
+b'011D': O2 Sensors Present (alternate)
+b'011E': Auxiliary input status (power take off)
+b'011F': Engine Run Time
+b'0120': Supported PIDs [21-40]
+b'0121': Distance Traveled with MIL on
+b'0122': Fuel Rail Pressure (relative to vacuum)
+b'0123': Fuel Rail Pressure (direct inject)
+b'0124': 02 Sensor 1 WR Lambda Voltage
+b'0125': 02 Sensor 2 WR Lambda Voltage
+b'0126': 02 Sensor 3 WR Lambda Voltage
+b'0127': 02 Sensor 4 WR Lambda Voltage
+b'0128': 02 Sensor 5 WR Lambda Voltage
+b'0129': 02 Sensor 6 WR Lambda Voltage
+b'012A': 02 Sensor 7 WR Lambda Voltage
+b'012B': 02 Sensor 8 WR Lambda Voltage
+b'012C': Commanded EGR
+b'012D': EGR Error
+b'012E': Commanded Evaporative Purge
+b'012F': Fuel Level Input
+b'0130': Number of warm-ups since codes cleared
+b'0131': Distance traveled since codes cleared
+b'0132': Evaporative system vapor pressure
+b'0133': Barometric Pressure
+b'0134': 02 Sensor 1 WR Lambda Current
+b'0135': 02 Sensor 2 WR Lambda Current
+b'0136': 02 Sensor 3 WR Lambda Current
+b'0137': 02 Sensor 4 WR Lambda Current
+b'0138': 02 Sensor 5 WR Lambda Current
+b'0139': 02 Sensor 6 WR Lambda Current
+b'013A': 02 Sensor 7 WR Lambda Current
+b'013B': 02 Sensor 8 WR Lambda Current
+b'013C': Catalyst Temperature: Bank 1 - Sensor 1
+b'013D': Catalyst Temperature: Bank 2 - Sensor 1
+b'013E': Catalyst Temperature: Bank 1 - Sensor 2
+b'013F': Catalyst Temperature: Bank 2 - Sensor 2
+b'0140': Supported PIDs [41-60]
+b'0141': Monitor status this drive cycle
+b'0142': Control module voltage
+b'0143': Absolute load value
+b'0144': Commanded equivalence ratio
+b'0145': Relative throttle position
+b'0146': Ambient air temperature
+b'0147': Absolute throttle position B
+b'0148': Absolute throttle position C
+b'0149': Accelerator pedal position D
+b'014A': Accelerator pedal position E
+b'014B': Accelerator pedal position F
+b'014C': Commanded throttle actuator
+b'014D': Time run with MIL on
+b'014E': Time since trouble codes cleared
+b'014F': Various Max values
+b'0150': Maximum value for mass air flow sensor
+b'0151': Fuel Type
+b'0152': Ethanol Fuel Percent
+b'0153': Absolute Evap system Vapor Pressure
+b'0154': Evap system vapor pressure
+b'0155': Short term secondary O2 trim - Bank 1
+b'0156': Long term secondary O2 trim - Bank 1
+b'0157': Short term secondary O2 trim - Bank 2
+b'0158': Long term secondary O2 trim - Bank 2
+b'0159': Fuel rail pressure (absolute)
+b'015A': Relative accelerator pedal position
+b'015B': Hybrid battery pack remaining life
+b'015C': Engine oil temperature
+b'015D': Fuel injection timing
+b'015E': Engine fuel rate
+b'015F': Designed emission requirements
+b'0200': DTC Supported PIDs [01-20]
+b'0201': DTC Status since DTCs cleared
+b'0202': DTC DTC that triggered the freeze frame
+b'0203': DTC Fuel System Status
+b'0204': DTC Calculated Engine Load
+b'0205': DTC Engine Coolant Temperature
+b'0206': DTC Short Term Fuel Trim - Bank 1
+b'0207': DTC Long Term Fuel Trim - Bank 1
+b'0208': DTC Short Term Fuel Trim - Bank 2
+b'0209': DTC Long Term Fuel Trim - Bank 2
+b'020A': DTC Fuel Pressure
+b'020B': DTC Intake Manifold Pressure
+b'020C': DTC Engine RPM
+b'020D': DTC Vehicle Speed
+b'020E': DTC Timing Advance
+b'020F': DTC Intake Air Temp
+b'0210': DTC Air Flow Rate (MAF)
+b'0211': DTC Throttle Position
+b'0212': DTC Secondary Air Status
+b'0213': DTC O2 Sensors Present
+b'0214': DTC O2: Bank 1 - Sensor 1 Voltage
+b'0215': DTC O2: Bank 1 - Sensor 2 Voltage
+b'0216': DTC O2: Bank 1 - Sensor 3 Voltage
+b'0217': DTC O2: Bank 1 - Sensor 4 Voltage
+b'0218': DTC O2: Bank 2 - Sensor 1 Voltage
+b'0219': DTC O2: Bank 2 - Sensor 2 Voltage
+b'021A': DTC O2: Bank 2 - Sensor 3 Voltage
+b'021B': DTC O2: Bank 2 - Sensor 4 Voltage
+b'021C': DTC OBD Standards Compliance
+b'021D': DTC O2 Sensors Present (alternate)
+b'021E': DTC Auxiliary input status (power take off)
+b'021F': DTC Engine Run Time
+b'0220': DTC Supported PIDs [21-40]
+b'0221': DTC Distance Traveled with MIL on
+b'0222': DTC Fuel Rail Pressure (relative to vacuum)
+b'0223': DTC Fuel Rail Pressure (direct inject)
+b'0224': DTC 02 Sensor 1 WR Lambda Voltage
+b'0225': DTC 02 Sensor 2 WR Lambda Voltage
+b'0226': DTC 02 Sensor 3 WR Lambda Voltage
+b'0227': DTC 02 Sensor 4 WR Lambda Voltage
+b'0228': DTC 02 Sensor 5 WR Lambda Voltage
+b'0229': DTC 02 Sensor 6 WR Lambda Voltage
+b'022A': DTC 02 Sensor 7 WR Lambda Voltage
+b'022B': DTC 02 Sensor 8 WR Lambda Voltage
+b'022C': DTC Commanded EGR
+b'022D': DTC EGR Error
+b'022E': DTC Commanded Evaporative Purge
+b'022F': DTC Fuel Level Input
+b'0230': DTC Number of warm-ups since codes cleared
+b'0231': DTC Distance traveled since codes cleared
+b'0232': DTC Evaporative system vapor pressure
+b'0233': DTC Barometric Pressure
+b'0234': DTC 02 Sensor 1 WR Lambda Current
+b'0235': DTC 02 Sensor 2 WR Lambda Current
+b'0236': DTC 02 Sensor 3 WR Lambda Current
+b'0237': DTC 02 Sensor 4 WR Lambda Current
+b'0238': DTC 02 Sensor 5 WR Lambda Current
+b'0239': DTC 02 Sensor 6 WR Lambda Current
+b'023A': DTC 02 Sensor 7 WR Lambda Current
+b'023B': DTC 02 Sensor 8 WR Lambda Current
+b'023C': DTC Catalyst Temperature: Bank 1 - Sensor 1
+b'023D': DTC Catalyst Temperature: Bank 2 - Sensor 1
+b'023E': DTC Catalyst Temperature: Bank 1 - Sensor 2
+b'023F': DTC Catalyst Temperature: Bank 2 - Sensor 2
+b'0240': DTC Supported PIDs [41-60]
+b'0241': DTC Monitor status this drive cycle
+b'0242': DTC Control module voltage
+b'0243': DTC Absolute load value
+b'0244': DTC Commanded equivalence ratio
+b'0245': DTC Relative throttle position
+b'0246': DTC Ambient air temperature
+b'0247': DTC Absolute throttle position B
+b'0248': DTC Absolute throttle position C
+b'0249': DTC Accelerator pedal position D
+b'024A': DTC Accelerator pedal position E
+b'024B': DTC Accelerator pedal position F
+b'024C': DTC Commanded throttle actuator
+b'024D': DTC Time run with MIL on
+b'024E': DTC Time since trouble codes cleared
+b'024F': DTC Various Max values
+b'0250': DTC Maximum value for mass air flow sensor
+b'0251': DTC Fuel Type
+b'0252': DTC Ethanol Fuel Percent
+b'0253': DTC Absolute Evap system Vapor Pressure
+b'0254': DTC Evap system vapor pressure
+b'0255': DTC Short term secondary O2 trim - Bank 1
+b'0256': DTC Long term secondary O2 trim - Bank 1
+b'0257': DTC Short term secondary O2 trim - Bank 2
+b'0258': DTC Long term secondary O2 trim - Bank 2
+b'0259': DTC Fuel rail pressure (absolute)
+b'025A': DTC Relative accelerator pedal position
+b'025B': DTC Hybrid battery pack remaining life
+b'025C': DTC Engine oil temperature
+b'025D': DTC Fuel injection timing
+b'025E': DTC Engine fuel rate
+b'025F': DTC Designed emission requirements
+b'03': Get DTCs
+b'04': Clear DTCs and Freeze data
+b'0600': Supported MIDs [01-20]
+b'0601': O2 Sensor Monitor Bank 1 - Sensor 1
+b'0602': O2 Sensor Monitor Bank 1 - Sensor 2
+b'0603': O2 Sensor Monitor Bank 1 - Sensor 3
+b'0604': O2 Sensor Monitor Bank 1 - Sensor 4
+b'0605': O2 Sensor Monitor Bank 2 - Sensor 1
+b'0606': O2 Sensor Monitor Bank 2 - Sensor 2
+b'0607': O2 Sensor Monitor Bank 2 - Sensor 3
+b'0608': O2 Sensor Monitor Bank 2 - Sensor 4
+b'0609': O2 Sensor Monitor Bank 3 - Sensor 1
+b'060A': O2 Sensor Monitor Bank 3 - Sensor 2
+b'060B': O2 Sensor Monitor Bank 3 - Sensor 3
+b'060C': O2 Sensor Monitor Bank 3 - Sensor 4
+b'060D': O2 Sensor Monitor Bank 4 - Sensor 1
+b'060E': O2 Sensor Monitor Bank 4 - Sensor 2
+b'060F': O2 Sensor Monitor Bank 4 - Sensor 3
+b'0610': O2 Sensor Monitor Bank 4 - Sensor 4
+b'0620': Supported MIDs [21-40]
+b'0621': Catalyst Monitor Bank 1
+b'0622': Catalyst Monitor Bank 2
+b'0623': Catalyst Monitor Bank 3
+b'0624': Catalyst Monitor Bank 4
+b'0631': EGR Monitor Bank 1
+b'0632': EGR Monitor Bank 2
+b'0633': EGR Monitor Bank 3
+b'0634': EGR Monitor Bank 4
+b'0635': VVT Monitor Bank 1
+b'0636': VVT Monitor Bank 2
+b'0637': VVT Monitor Bank 3
+b'0638': VVT Monitor Bank 4
+b'0639': EVAP Monitor (Cap Off / 0.150")
+b'063A': EVAP Monitor (0.090")
+b'063B': EVAP Monitor (0.040")
+b'063C': EVAP Monitor (0.020")
+b'063D': Purge Flow Monitor
+b'0640': Supported MIDs [41-60]
+b'0641': O2 Sensor Heater Monitor Bank 1 - Sensor 1
+b'0642': O2 Sensor Heater Monitor Bank 1 - Sensor 2
+b'0643': O2 Sensor Heater Monitor Bank 1 - Sensor 3
+b'0644': O2 Sensor Heater Monitor Bank 1 - Sensor 4
+b'0645': O2 Sensor Heater Monitor Bank 2 - Sensor 1
+b'0646': O2 Sensor Heater Monitor Bank 2 - Sensor 2
+b'0647': O2 Sensor Heater Monitor Bank 2 - Sensor 3
+b'0648': O2 Sensor Heater Monitor Bank 2 - Sensor 4
+b'0649': O2 Sensor Heater Monitor Bank 3 - Sensor 1
+b'064A': O2 Sensor Heater Monitor Bank 3 - Sensor 2
+b'064B': O2 Sensor Heater Monitor Bank 3 - Sensor 3
+b'064C': O2 Sensor Heater Monitor Bank 3 - Sensor 4
+b'064D': O2 Sensor Heater Monitor Bank 4 - Sensor 1
+b'064E': O2 Sensor Heater Monitor Bank 4 - Sensor 2
+b'064F': O2 Sensor Heater Monitor Bank 4 - Sensor 3
+b'0650': O2 Sensor Heater Monitor Bank 4 - Sensor 4
+b'0660': Supported MIDs [61-80]
+b'0661': Heated Catalyst Monitor Bank 1
+b'0662': Heated Catalyst Monitor Bank 2
+b'0663': Heated Catalyst Monitor Bank 3
+b'0664': Heated Catalyst Monitor Bank 4
+b'0671': Secondary Air Monitor 1
+b'0672': Secondary Air Monitor 2
+b'0673': Secondary Air Monitor 3
+b'0674': Secondary Air Monitor 4
+b'0680': Supported MIDs [81-A0]
+b'0681': Fuel System Monitor Bank 1
+b'0682': Fuel System Monitor Bank 2
+b'0683': Fuel System Monitor Bank 3
+b'0684': Fuel System Monitor Bank 4
+b'0685': Boost Pressure Control Monitor Bank 1
+b'0686': Boost Pressure Control Monitor Bank 1
+b'0690': NOx Absorber Monitor Bank 1
+b'0691': NOx Absorber Monitor Bank 2
+b'0698': NOx Catalyst Monitor Bank 1
+b'0699': NOx Catalyst Monitor Bank 2
+b'06A0': Supported MIDs [A1-C0]
+b'06A1': Misfire Monitor General Data
+b'06A2': Misfire Cylinder 1 Data
+b'06A3': Misfire Cylinder 2 Data
+b'06A4': Misfire Cylinder 3 Data
+b'06A5': Misfire Cylinder 4 Data
+b'06A6': Misfire Cylinder 5 Data
+b'06A7': Misfire Cylinder 6 Data
+b'06A8': Misfire Cylinder 7 Data
+b'06A9': Misfire Cylinder 8 Data
+b'06AA': Misfire Cylinder 9 Data
+b'06AB': Misfire Cylinder 10 Data
+b'06AC': Misfire Cylinder 11 Data
+b'06AD': Misfire Cylinder 12 Data
+b'06B0': PM Filter Monitor Bank 1
+b'06B1': PM Filter Monitor Bank 2
+b'07': Get DTCs from the current/last driving cycle
