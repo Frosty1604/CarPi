@@ -1,7 +1,9 @@
 import time
 
 import obd
+
 from reader import Reader
+
 
 # obd.logger.setLevel(obd.logging.DEBUG)
 
@@ -36,7 +38,17 @@ connection = obd.OBD("/dev/ttys001")
 
 reader = Reader("/dev/ttys001")
 
-print(reader.get_fuel_level())
+def get_data():
+    while True:
+        print(reader.get_speed())
+        print(reader.get_rpm())
+        print(reader.get_engine_load())
+        print(reader.get_engine_run_time())
+        time.sleep(0.2)
+        print("-----------------------------")
 
 print(connection.status())
 # print(obd.commands.SPEED)
+
+if __name__ == '__main__':
+    get_data()

@@ -2,9 +2,24 @@ import obd
 
 
 class Reader:
+    __instance = None
 
     def __init__(self, port: str):
         self.connection = obd.OBD(port)
+        Reader.__instance = self
+
+    @staticmethod
+    def get_instance(port: str):
+        """ Static access method. """
+        if not Reader.__instance:
+            Reader(port)
+        return Reader.__instance
+
+    def get_data(self, command):
+        try:
+            return self.connection.query(command).value.magnitude
+        except:
+            return self.connection.query(command).value
 
     def get_speed(self):
         return self.connection.query(obd.commands.SPEED)
