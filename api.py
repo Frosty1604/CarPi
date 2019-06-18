@@ -29,7 +29,7 @@ commands = {
 }
 
 
-class Test(Resource):
+class Api(Resource):
     def __init__(self):
         self.reader = Reader.get_instance("/dev/ttys001")
 
@@ -54,5 +54,5 @@ class Test(Resource):
         return "No Data available", 404
 
 
-api.add_resource(Test, "/api")
+api.add_resource(Api, "/api")
 app.run()

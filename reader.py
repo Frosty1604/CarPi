@@ -18,7 +18,8 @@ class Reader:
     def get_data(self, command):
         try:
             return self.connection.query(command).value.magnitude
-        except:
+        except Exception as e:
+            print(e)
             return self.connection.query(command).value
 
     def get_speed(self):
