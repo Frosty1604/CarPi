@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/OBD_Reader.iml" filepath="$PROJECT_DIR$/.idea/OBD_Reader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../CarPi/.idea/CarPi.iml" filepath="$PROJECT_DIR$/../CarPi/.idea/CarPi.iml" />
     </modules>
   </component>
 </project>
