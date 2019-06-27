@@ -1,11 +1,26 @@
 import obd
 
+from database_manager import DatabaseManager
+
+logger_commands = {
+    "speed": obd.commands.SPEED,
+    "rpm": obd.commands.RPM,
+    "throttle_pos": obd.commands.THROTTLE_POS,
+    "coolant_temp": obd.commands.COOLANT_TEMP,
+    # "fuel_status": obd.commands.FUEL_STATUS,
+    # "engine_load": obd.commands.ENGINE_LOAD,
+    # "fuel_rate": obd.commands.FUEL_RATE,
+    # "oil_temp": obd.commands.OIL_TEMP,
+    # "intake_temp": obd.commands.INTAKE_TEMP,
+}
+
 
 class Reader:
     __instance = None
 
-    def __init__(self, port: str):
+    def __init__(self, port: str, database_name: str):
         self.connection = obd.OBD(port)
+        self.database_manager = DatabaseManager(database_name)
         Reader.__instance = self
 
     @staticmethod
@@ -86,3 +101,12 @@ class Reader:
         data_all.append("MAF: " + str(self.get_maf()))
         data_all.append("Status: " + str(self.get_status()))
         return data_all
+
+    def init_logger(self):
+        for key in logger_commands.keys():
+            self.database_manager.create_table(key)
+
+    def logger(self):
+        for command in logger_commands:
+            self.database_manager.add_data(command, self.get_data(logger_commands.get(command)))
+        print("logged data")

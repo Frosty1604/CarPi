@@ -4,7 +4,6 @@ import obd
 
 from reader import Reader
 
-
 # obd.logger.setLevel(obd.logging.DEBUG)
 
 connection = obd.OBD("/dev/ttys001")
@@ -36,7 +35,8 @@ connection = obd.OBD("/dev/ttys001")
 #     print("------------------------")
 #     time.sleep(1)
 
-reader = Reader("/dev/ttys001")
+reader = Reader("/dev/ttys002", "Test")
+
 
 def get_data():
     while True:
@@ -47,8 +47,13 @@ def get_data():
         time.sleep(0.2)
         print("-----------------------------")
 
+
 print(connection.status())
 # print(obd.commands.SPEED)
 
 if __name__ == '__main__':
-    get_data()
+    reader.init_logger()
+    while True:
+        reader.logger()
+        time.sleep(1)
+# get_data()
