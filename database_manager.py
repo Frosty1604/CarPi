@@ -21,7 +21,7 @@ class DatabaseManager:
             index += 1
 
     def add_data(self, table_name: str, data):
-        self.conn.execute("INSERT INTO " + table_name + " VALUES(?)", data)
+        self.conn.execute("INSERT INTO " + table_name + " VALUES(?)", (data,))
         self.conn.commit()
 
     def get_all_data(self, table_name: str):
