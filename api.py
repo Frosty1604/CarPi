@@ -1,7 +1,6 @@
-import json
-
 import obd
-from flask import Flask
+from flask import Flask, jsonify
+from flask_cors import cross_origin
 from flask_restful import Api, Resource, reqparse
 
 from reader import Reader
@@ -16,7 +15,7 @@ commands = {
     "throttle_pos": obd.commands.THROTTLE_POS,
     "fuel_level": obd.commands.FUEL_LEVEL,
     "status": obd.commands.STATUS,
-    "coolant_temp": obd.commands.COOLANT_TEMP,
+    "coolant": obd.commands.COOLANT_TEMP,
     "fuel_status": obd.commands.FUEL_STATUS,
     "engine_load": obd.commands.ENGINE_LOAD,
     "fuel_type": obd.commands.FUEL_TYPE,
@@ -31,8 +30,9 @@ commands = {
 
 class Api(Resource):
     def __init__(self):
-        self.reader = Reader.get_instance("/dev/ttys001")
+        self.reader = Reader.get_instance("/dev/pts/3")
 
+    @cross_origin()
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument("data")
@@ -43,14 +43,18 @@ class Api(Resource):
             return "No request was given", 404
 
         requests = args.get("data").split(",")
-        data = {}
+        data = []
+
         for i in range(len(requests)):
             if requests[i]:
-                data.update({requests[i]: str(self.reader.get_data(commands.get(requests[i])))})
+                value = self.reader.get_data(commands.get(requests[i]))
+                if value is None:
+                    value = -1
+                data.append({"title": requests[i], "value": value})
 
         if data:
             print(data)
-            return json.dumps(data), 200
+            return jsonify(data), 200
         return "No Data available", 404
 
 
