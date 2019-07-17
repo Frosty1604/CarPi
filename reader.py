@@ -19,7 +19,7 @@ class Reader:
     __instance = None
 
     def __init__(self, port: str, database_name: str):
-        self.connection = obd.OBD(port)
+        self.connection = obd.OBD(port, fast=False)
         self.database_manager = DatabaseManager(database_name)
         Reader.__instance = self
 
