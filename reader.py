@@ -86,20 +86,14 @@ class Reader:
         return self.connection.query(obd.commands.ELM_VOLTAGE)
 
     def get_all(self):
-        data_all = []
-        data_all.append("Speed: " + str(self.get_speed()))
-        data_all.append("RPM: " + str(self.get_rpm()))
-        data_all.append("Engine Runtime: " + str(self.get_engine_run_time()))
-        data_all.append("Throttle Position: " + str(self.get_engine_run_time()))
-        data_all.append("Fuel Level: " + str(self.get_fuel_level()))
-        data_all.append("Fuel Type: " + str(self.get_fuel_type()))
-        data_all.append("Fuel Rate: " + str(self.get_fuel_rate()))
-        data_all.append("Oil Temp: " + str(self.get_oil_temp()))
-        data_all.append("Coolant Temp: " + str(self.get_coolant_temp()))
-        data_all.append("Intake Temp: " + str(self.get_intake_temp()))
-        data_all.append("Engine Load: " + str(self.get_engine_load()))
-        data_all.append("MAF: " + str(self.get_maf()))
-        data_all.append("Status: " + str(self.get_status()))
+        data_all = ["Speed: " + str(self.get_speed()), "RPM: " + str(self.get_rpm()),
+                    "Engine Runtime: " + str(self.get_engine_run_time()),
+                    "Throttle Position: " + str(self.get_engine_run_time()),
+                    "Fuel Level: " + str(self.get_fuel_level()), "Fuel Type: " + str(self.get_fuel_type()),
+                    "Fuel Rate: " + str(self.get_fuel_rate()), "Oil Temp: " + str(self.get_oil_temp()),
+                    "Coolant Temp: " + str(self.get_coolant_temp()), "Intake Temp: " + str(self.get_intake_temp()),
+                    "Engine Load: " + str(self.get_engine_load()), "MAF: " + str(self.get_maf()),
+                    "Status: " + str(self.get_status())]
         return data_all
 
     def init_logger(self):
@@ -110,3 +104,6 @@ class Reader:
         for command in logger_commands:
             self.database_manager.add_data(command, self.get_data(logger_commands.get(command)))
         print("logged data")
+
+    def is_connected(self):
+        return self.connection.is_connected()
