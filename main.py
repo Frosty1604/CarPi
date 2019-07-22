@@ -8,7 +8,9 @@ from reader import Reader
 
 connection = obd.OBD("/dev/ttys001")
 
-reader = Reader("/dev/ttys002", "Test")
+reader = Reader("/dev/ttys002")
+
+import database_manager
 
 
 def get_data():
@@ -24,7 +26,7 @@ def get_data():
 print(connection.status())
 
 if __name__ == '__main__':
-    reader.init_logger()
+    database_manager.create_table()
     while True:
         reader.logger()
         time.sleep(1)
