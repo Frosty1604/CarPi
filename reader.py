@@ -1,6 +1,7 @@
 import obd
 
-from database_manager import DatabaseManager
+import database_manager
+import datetime
 
 logger_commands = {
     "speed": obd.commands.SPEED,
@@ -18,9 +19,8 @@ logger_commands = {
 class Reader:
     __instance = None
 
-    def __init__(self, port: str, database_name: str):
+    def __init__(self, port: str):
         self.connection = obd.OBD(port, fast=False)
-        self.database_manager = DatabaseManager(database_name)
         Reader.__instance = self
 
     @staticmethod
@@ -96,13 +96,24 @@ class Reader:
                     "Status: " + str(self.get_status())]
         return data_all
 
-    def init_logger(self):
-        for key in logger_commands.keys():
-            self.database_manager.create_table(key)
+    def get_data_for_db(self):
+        data = [
+            str(datetime.datetime.now().timestamp()),
+            str(self.get_speed()), #speed
+            str(self.get_rpm()),   #rpm
+            str(self.get_engine_run_time()), #engine runtime
+            str(self.get_throttle_position()), #throttle pos
+            str(self.get_fuel_level()), # fuel level
+            str(self.get_fuel_rate()), # fuel rate
+            str(self.get_coolant_temp()), #coolant temp
+            str(self.get_oil_temp()), #oil temp
+            str(self.get_engine_load()), #engine load
+        ]
+
+        return data
 
     def logger(self):
-        for command in logger_commands:
-            self.database_manager.add_data(command, self.get_data(logger_commands.get(command)))
+        database_manager.add_data(self.get_data_for_db())
         print("logged data")
 
     def is_connected(self):

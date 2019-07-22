@@ -1,38 +1,64 @@
 import sqlite3
+import csv
 
 
-class DatabaseManager:
+def create_connection():
+    try:
+        conn = sqlite3.connect("car_pi_database.db")
+        return conn
+    except Exception as e:
+        print(e)
 
-    def __init__(self, db_name: str):
-        self.conn = sqlite3.connect(db_name + ".db")
-        self.tables = []
+    return None
 
-    def create_table(self, table_name: str):
-        try:
-            self.conn.execute("CREATE TABLE " + table_name + "(" + table_name + " CHAR)")
-            self.tables.append(table_name)
-        except Exception as e:
-            print(e)
 
-    def get_tables(self):
-        index = 0
-        for table in self.tables:
-            print("#" + str(index) + " " + table)
-            index += 1
+def create_table():
+    sql_create_table_logger = """CREATE TABLE IF NOT EXISTS car_stats (
+                                        id text PRIMARY KEY,
+                                        speed text NOT NULL,
+                                        rpm text NOT NULL,
+                                        engine_runtime text NOT NULL,
+                                        throttle_pos text NOT NULL,
+                                        fuel_level text NOT NULL, 
+                                        fuel_rate text NOT NULL, 
+                                        coolant_temp text NOT NULL,
+                                        oil_temp text NOT NULL, 
+                                        engine_load text NOT NULL
+                                    ); """
+    conn = create_connection()
+    try:
+        conn.execute(sql_create_table_logger)
+    except Exception as e:
+        print(e)
+    finally:
+        conn.close()
 
-    def add_data(self, table_name: str, data):
-        self.conn.execute("INSERT INTO " + table_name + " VALUES(?)", (data,))
-        self.conn.commit()
 
-    def get_all_data(self, table_name: str):
-        cur = self.conn.cursor()
-        data = []
+def add_data(data):
+    sql_add_data = """INSERT INTO car_stats (
+    id, speed, rpm, engine_runtime, throttle_pos, fuel_level, fuel_rate, coolant_temp, oil_temp, engine_load) 
+    VALUES (?,?,?,?,?,?,?,?,?,?)"""
+    conn = create_connection()
+    try:
+        conn.execute(sql_add_data, data)
+        conn.commit()
+    except Exception as exception:
+        print(exception)
+    finally:
+        conn.close()
 
-        cur.execute("SELECT " + table_name + " FROM " + table_name)
 
-        rows = cur.fetchall()
+def export_data_from_db():
+    conn = create_connection()
+    cursor = conn.cursor()
 
-        for row in rows:
-            data.append(row[0])
+    cursor.execute("SELECT * FROM car_stats")
 
-        return data
+    with open("car_pi_stats.csv", "w") as out_csv_file:
+        csv_out = csv.writer(out_csv_file)
+        csv_out.writerow([data[0] for data in cursor.description])  # header
+
+        for result in cursor:  # data
+            csv_out.writerow(result)
+
+    conn.close()

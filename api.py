@@ -2,6 +2,7 @@ import obd
 from flask import Flask, jsonify
 from flask_cors import cross_origin
 from flask_restful import Api, Resource, reqparse
+import database_manager
 
 from reader import Reader
 
@@ -56,6 +57,13 @@ class Api(Resource):
             print(data)
             return jsonify(data), 200
         return "No Data available", 404
+
+
+@app.route("/export", methods=["GET"])
+def export_data():
+    database_manager.export_data_from_db()
+    response = app.response_class(status=200, response="Successfully exported Data to csv!")
+    return response
 
 
 api.add_resource(Api, "/api")
