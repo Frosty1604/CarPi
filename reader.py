@@ -21,6 +21,7 @@ class Reader:
 
     def __init__(self, port: str):
         self.connection = obd.OBD(port, fast=False)
+        database_manager.create_table()
         Reader.__instance = self
 
     @staticmethod

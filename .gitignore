@@ -131,6 +131,8 @@ dmypy.json
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**/webServers.xml
+.idea/**/deployment.xml
 
 # Generated files
 .idea/**/contentModel.xml
@@ -153,9 +155,9 @@ dmypy.json
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
 # .idea/modules.xml
-# .idea/*.iml
+ .idea/*.iml
 # .idea/modules
-# *.iml
+ *.iml
 # *.ipr
 
 # CMake

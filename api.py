@@ -31,7 +31,7 @@ commands = {
 
 class Api(Resource):
     def __init__(self):
-        self.reader = Reader.get_instance("/dev/pts/3")
+        self.reader = Reader.get_instance("/dev/pts/2")
 
     @cross_origin()
     def get(self):
@@ -45,6 +45,8 @@ class Api(Resource):
 
         requests = args.get("data").split(",")
         data = []
+
+        self.reader.logger()
 
         for i in range(len(requests)):
             if requests[i]:
@@ -60,6 +62,7 @@ class Api(Resource):
 
 
 @app.route("/export", methods=["GET"])
+@cross_origin()
 def export_data():
     database_manager.export_data_from_db()
     response = app.response_class(status=200, response="Successfully exported Data to csv!")
